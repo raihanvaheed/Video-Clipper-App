@@ -1,11 +1,14 @@
 // src/components/VideoPlayer.tsx
 import React from 'react';
 
-const VideoPlayer: React.FC = () => {
+interface VideoPlayerProps {
+  videoSrc: string;
+}
+
+const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoSrc }) => {
   return (
     <div>
-      <video controls width="600">
-        <source src="WelcomeToJurassicPark.mp4" type="video/mp4" />
+      <video controls width="600" src={videoSrc}>
         Your browser does not support the video tag.
       </video>
     </div>
