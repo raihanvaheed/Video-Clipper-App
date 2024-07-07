@@ -4,7 +4,7 @@
 
 Welcome to the Video Clipper application! This project is a web-based tool designed to allow users to upload and view videos through a custom video player component. The current stage (Stage 1) focuses on setting up the basic project structure and implementing a simple video player to play a sample video clip.
 
-For detailed documentation, visit our [Project Wiki](https://github.com/your-username/video-clipper-app/wiki).
+For detailed documentation, visit our [Project Wiki](https://github.com/raihanvaheed/video-clipper-app/wiki).
 
 ## Features
 
