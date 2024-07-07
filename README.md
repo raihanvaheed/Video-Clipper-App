@@ -1,14 +1,16 @@
+
 # Video Clipper - Stage 1
 
 ## Overview
 
 Welcome to the Video Clipper application! This project is a web-based tool designed to allow users to upload and view videos through a custom video player component. The current stage (Stage 1) focuses on setting up the basic project structure and implementing a simple video player to play a sample video clip.
 
-For detailed documentation, visit our [Project Wiki](https://github.com/raihanvaheed/video-clipper-app/wiki).
+For detailed documentation, visit our [Project Wiki](https://github.com/raihanvaheed/Video-Clipper-App/wiki).
 
 ## Features
 
 - **Custom Video Player:** A simple video player component built with React and TypeScript.
+- **Upload and Play Video:** Users can upload a video from their local computer and play it in the video player.
 - **Sample Video Clip:** Includes a sample video clip "WelcomeToJurassicPark.mp4" to demonstrate the video player's functionality.
 - **Frontend-Backend Separation:** The project is structured with separate front-end and back-end directories for better scalability and maintainability.
 
@@ -107,6 +109,39 @@ Compiles the TypeScript code into JavaScript and outputs it into the `dist` dire
 #### `npm start`
 
 Runs the compiled JavaScript code from the `dist` directory.
+
+### Full Project Setup
+
+To get the entire project up and running, follow these steps:
+
+1. **Install Dependencies**:
+   - In the project root, run the following commands to install dependencies for both client and server:
+
+     ```bash
+     cd client
+     npm install
+     cd ../server
+     npm install
+     ```
+
+2. **Build the React App**:
+   - Navigate to the `client` directory and build the app:
+
+     ```bash
+     cd client
+     npm run build
+     ```
+
+3. **Start the Express Server**:
+   - Navigate to the `server` directory and start the development server:
+
+     ```bash
+     cd ../server
+     npm run dev
+     ```
+
+4. **Open Your Browser**:
+   - Open your browser and go to `http://localhost:5000`. Your React app should be running, served by your Express server.
 
 ## Next Steps
 
