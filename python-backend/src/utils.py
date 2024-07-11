@@ -1,4 +1,5 @@
 # utils.py
+
 import os
 import cv2
 from flask import Response, request
@@ -8,7 +9,9 @@ def process_video(filepath, yolo, processed_folder, progress_callback):
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     filename = os.path.basename(filepath)
     output_path = os.path.join(processed_folder, filename)
-    fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # Ensure correct video codec
+    
+    # Switch to H264 codec
+    fourcc = cv2.VideoWriter_fourcc(*'H264')  # Change codec to H264
     out = cv2.VideoWriter(output_path, fourcc, 30.0, (int(cap.get(3)), int(cap.get(4))))
 
     processed_frames = 0
@@ -39,4 +42,3 @@ def stream_video(file_path):
                     break
                 yield data
     return Response(generate(), headers={'Content-Type': 'video/mp4'})
-

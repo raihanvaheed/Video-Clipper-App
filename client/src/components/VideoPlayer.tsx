@@ -2,24 +2,32 @@
 import React from "react";
 
 interface VideoPlayerProps {
-  videoSrc: string | null;
+  originalVideoSrc: string | null;
+  processedVideoSrc: string | null;
 }
 
-const VideoPlayer: React.FC<VideoPlayerProps> = ({ videoSrc }) => {
+const VideoPlayer: React.FC<VideoPlayerProps> = ({
+  originalVideoSrc,
+  processedVideoSrc,
+}) => {
   return (
     <div>
-      {videoSrc && (
+      {originalVideoSrc && (
         <div>
           <h3>Original Video:</h3>
-          <video controls width="600" src={videoSrc}>
+          <video controls width="600" src={originalVideoSrc}>
             Your browser does not support the video tag.
           </video>
         </div>
       )}
-      <div>
-        <h3>Processed Video:</h3>
-        <p>The processed video is saved in the "processed" folder.</p>
-      </div>
+      {processedVideoSrc && (
+        <div>
+          <h3>Processed Video:</h3>
+          <video controls width="600" src={processedVideoSrc}>
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      )}
     </div>
   );
 };

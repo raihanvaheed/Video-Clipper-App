@@ -4,7 +4,10 @@ import VideoPlayer from "./components/VideoPlayer";
 import "./styles/App.css";
 
 const App: React.FC = () => {
-  const [videoSrc, setVideoSrc] = useState<string | null>(null);
+  const [originalVideoSrc, setOriginalVideoSrc] = useState<string | null>(null);
+  const [processedVideoSrc, setProcessedVideoSrc] = useState<string | null>(
+    null
+  );
   const [progress, setProgress] = useState<number>(0);
   const [isProcessing, setIsProcessing] = useState<boolean>(false);
 
@@ -26,13 +29,12 @@ const App: React.FC = () => {
         if (response.ok) {
           const data = await response.json();
           const originalVideoUrl = URL.createObjectURL(file);
-          setVideoSrc(originalVideoUrl);
+          const processedVideoUrl = `http://localhost:5000/processed/${data.path}`;
+          setOriginalVideoSrc(originalVideoUrl);
+          setProcessedVideoSrc(processedVideoUrl);
           // Debugging: Log URLs
           console.log("Original Video URL:", originalVideoUrl);
-          console.log(
-            "Processed Video URL:",
-            `http://localhost:5000/processed/${data.path}`
-          );
+          console.log("Processed Video URL:", processedVideoUrl);
         } else {
           console.error("Failed to upload and process video");
         }
@@ -87,7 +89,10 @@ const App: React.FC = () => {
               <progress value={progress} max="100"></progress>
             </div>
           ) : (
-            <VideoPlayer videoSrc={videoSrc} />
+            <VideoPlayer
+              originalVideoSrc={originalVideoSrc}
+              processedVideoSrc={processedVideoSrc}
+            />
           )}
         </div>
       </div>
