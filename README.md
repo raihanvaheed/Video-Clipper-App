@@ -15,49 +15,6 @@ For detailed documentation, visit our [Project Wiki](https://github.com/raihanva
 - **Processed Video Information:** Indicates where the processed video is saved.
 - **Frontend-Backend Separation:** The project is structured with separate front-end and back-end directories for better scalability and maintainability.
 
-## Project Structure
-
-```
-video-clipper-app/
-├── client/
-│   ├── public/
-│   │   ├── WelcomeToJurassicPark.mp4
-│   │   ├── index.html
-│   │   └── ...
-│   ├── src/
-│   │   ├── assets/
-│   │   ├── components/
-│   │   │   └── VideoPlayer.tsx
-│   │   ├── pages/
-│   │   ├── styles/
-│   │   │   ├── App.css
-│   │   │   └── index.css
-│   │   ├── App.tsx
-│   │   ├── index.tsx
-│   │   ├── react-app-env.d.ts
-│   │   └── ...
-│   ├── .gitignore
-│   ├── package.json
-│   ├── tsconfig.json
-│   └── ...
-├── python-backend/
-│   ├── models/
-│   │   └── yolov3.weights
-│   ├── processed/
-│   │   └── (processed videos)
-│   ├── src/
-│   │   ├── app.py
-│   │   ├── utils.py
-│   │   └── yolo.py
-│   ├── uploads/
-│   ├── venv/
-│   ├── .gitignore
-│   ├── requirements.txt
-│   └── ...
-├── .gitignore
-├── README.md
-└── ...
-```
 
 ## Getting Started
 
