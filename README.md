@@ -108,6 +108,23 @@ python -m venv venv
 source venv/bin/activate   # On Windows, use `venv\Scripts\activate`
 ```
 
+
+#### Populate `models` Directory
+
+Before running the backend server, ensure that the `models` directory is populated with the necessary YOLO configuration files, weights, and COCO labels. You can download these files from the following links:
+
+- **YOLOv3 Configuration File (`yolov3.cfg`)**:
+  - Download from: https://github.com/pjreddie/darknet/blob/master/cfg/yolov3.cfg
+
+- **YOLOv3 Weights (`yolov3.weights`)**:
+  - Download from: https://pjreddie.com/media/files/yolov3.weights
+
+- **COCO Labels (`coco.names`)**:
+  - Download from: https://github.com/pjreddie/darknet/blob/master/data/coco.names
+
+Place these files in the `python-backend/models` directory.
+
+
 #### Install Dependencies
 
 ```bash
