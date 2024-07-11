@@ -1,9 +1,9 @@
 
-# Video Clipper - Stage 1
+# Video Clipper - Stage 2
 
 ## Overview
 
-Welcome to the Video Clipper application! This project is a web-based tool designed to allow users to upload and view videos through a custom video player component. The current stage (Stage 1) focuses on setting up the basic project structure and implementing a simple video player to play a sample video clip.
+Welcome to the Video Clipper application! This project is a web-based tool designed to allow users to upload and view videos through a custom video player component. In Stage 2, we have integrated YOLO with OpenCV for video processing and made significant enhancements to the UI to display video processing progress.
 
 For detailed documentation, visit our [Project Wiki](https://github.com/raihanvaheed/Video-Clipper-App/wiki).
 
@@ -11,7 +11,9 @@ For detailed documentation, visit our [Project Wiki](https://github.com/raihanva
 
 - **Custom Video Player:** A simple video player component built with React and TypeScript.
 - **Upload and Play Video:** Users can upload a video from their local computer and play it in the video player.
-- **Sample Video Clip:** Includes a sample video clip "WelcomeToJurassicPark.mp4" to demonstrate the video player's functionality.
+- **Video Processing with YOLO:** Videos are processed using the YOLO algorithm with OpenCV to detect objects.
+- **Progress Indicator:** Displays the progress of video processing in the UI.
+- **Processed Video Information:** Indicates where the processed video is saved.
 - **Frontend-Backend Separation:** The project is structured with separate front-end and back-end directories for better scalability and maintainability.
 
 ## Project Structure
@@ -39,17 +41,19 @@ video-clipper-app/
 │   ├── package.json
 │   ├── tsconfig.json
 │   └── ...
-├── server/
+├── python-backend/
+│   ├── models/
+│   │   └── yolov3.weights
+│   ├── processed/
+│   │   └── (processed videos)
 │   ├── src/
-│   │   ├── routes/
-│   │   │   └── index.ts
-│   │   ├── controllers/
-│   │   ├── models/
-│   │   └── app.ts
+│   │   ├── app.py
+│   │   ├── utils.py
+│   │   └── yolo.py
+│   ├── uploads/
+│   ├── venv/
 │   ├── .gitignore
-│   ├── package-lock.json
-│   ├── package.json
-│   ├── tsconfig.json
+│   ├── requirements.txt
 │   └── ...
 ├── .gitignore
 ├── README.md
@@ -95,20 +99,26 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 ### Backend Setup
 
-In the `server` directory, you can run:
+In the `python-backend` directory, you can run:
 
-#### `npm run dev`
+#### Create and Activate Virtual Environment
 
-Runs the backend server in development mode using `ts-node-dev`.\
-The server will restart automatically if there are any changes in the source code.
+```bash
+python -m venv venv
+source venv/bin/activate   # On Windows, use `venv\Scripts\activate`
+```
 
-#### `npm run build`
+#### Install Dependencies
 
-Compiles the TypeScript code into JavaScript and outputs it into the `dist` directory.
+```bash
+pip install -r requirements.txt
+```
 
-#### `npm start`
+#### Run the Flask Server
 
-Runs the compiled JavaScript code from the `dist` directory.
+```bash
+python src/app.py
+```
 
 ### Full Project Setup
 
@@ -120,8 +130,8 @@ To get the entire project up and running, follow these steps:
      ```bash
      cd client
      npm install
-     cd ../server
-     npm install
+     cd ../python-backend
+     pip install -r requirements.txt
      ```
 
 2. **Build the React App**:
@@ -132,16 +142,16 @@ To get the entire project up and running, follow these steps:
      npm run build
      ```
 
-3. **Start the Express Server**:
-   - Navigate to the `server` directory and start the development server:
+3. **Start the Flask Server**:
+   - Navigate to the `python-backend` directory and start the development server:
 
      ```bash
-     cd ../server
-     npm run dev
+     cd ../python-backend
+     python src/app.py
      ```
 
 4. **Open Your Browser**:
-   - Open your browser and go to `http://localhost:5000`. Your React app should be running, served by your Express server.
+   - Open your browser and go to `http://localhost:3000`. Your React app should be running.
 
 ## Next Steps
 
@@ -151,6 +161,7 @@ In the next stages of development, we plan to:
 - Add user authentication and authorization.
 - Improve the user interface with more advanced features and better design.
 - Set up a database for storing user data and video metadata.
+- Fix the issue with processed video not playing in the UI.
 
 ## Learn More
 
