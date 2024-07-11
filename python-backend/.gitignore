@@ -1,0 +1,20 @@
+# .gitignore
+
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Uploads directory
+uploads/
+
+# Processed videos directory
+processed/
+
+# YOLO weight files
+models/yolov3.weights
+
+# Environment variables file
+.env
