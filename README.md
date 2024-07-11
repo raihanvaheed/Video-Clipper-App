@@ -12,9 +12,8 @@ For detailed documentation, visit our [Project Wiki](https://github.com/raihanva
 - **Upload and Play Video:** Users can upload a video from their local computer and play it in the video player.
 - **Video Processing with YOLO:** Videos are processed using the YOLO algorithm with OpenCV to detect objects.
 - **Progress Indicator:** Displays the progress of video processing in the UI.
-- **Processed Video Information:** Indicates where the processed video is saved.
+- **View Processed Video:** The processed video is now viewable in the UI.
 - **Frontend-Backend Separation:** The project is structured with separate front-end and back-end directories for better scalability and maintainability.
-
 
 ## Getting Started
 
@@ -130,7 +129,6 @@ In the next stages of development, we plan to:
 - Add user authentication and authorization.
 - Improve the user interface with more advanced features and better design.
 - Set up a database for storing user data and video metadata.
-- Fix the issue with processed video not playing in the UI.
 
 ## License
 
