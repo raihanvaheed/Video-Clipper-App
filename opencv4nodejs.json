@@ -1,0 +1,9 @@
+{
+    "opencvVersion": "4.5.2",
+    "flags": ["--shared"],
+    "modules": [],
+    "opencvBuildDir": "C:/opencv/build",
+    "opencvIncludeDir": "C:/opencv/build/include",
+    "opencvLibDir": "C:/opencv/build/x64/vc15/lib"
+  }
+  

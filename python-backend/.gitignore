@@ -1,0 +1,17 @@
+# .gitignore
+
+# Virtual environment
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Uploads directory
+uploads/
+
+# Processed videos directory
+processed/
+
+# Environment variables file
+.env
