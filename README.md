@@ -1,4 +1,3 @@
-
 # Video Clipper - Stage 2
 
 ## Overview
@@ -64,11 +63,26 @@ video-clipper-app/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Frontend Setup
+### Full Project Setup
+
+To get the entire project up and running, follow these steps:
+
+#### 1. Frontend Setup
 
 In the `client` directory, you can run:
 
-#### `npm start`
+##### Install Dependencies
+
+```bash
+cd client
+npm install
+```
+
+##### Run the Development Server
+
+```bash
+npm start
+```
 
 Runs the app in development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -76,12 +90,20 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-#### `npm test`
+##### Run Tests
+
+```bash
+npm test
+```
 
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-#### `npm run build`
+##### Build for Production
+
+```bash
+npm run build
+```
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -89,7 +111,11 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-#### `npm run eject`
+##### Eject Configuration
+
+```bash
+npm run eject
+```
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -97,19 +123,18 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point, you’re on your own.
 
-### Backend Setup
+#### 2. Backend Setup
 
 In the `python-backend` directory, you can run:
 
-#### Create and Activate Virtual Environment
+##### Create and Activate Virtual Environment
 
 ```bash
 python -m venv venv
 source venv/bin/activate   # On Windows, use `venv\Scripts\activate`
 ```
 
-
-#### Populate `models` Directory
+##### Populate `models` Directory
 
 Before running the backend server, ensure that the `models` directory is populated with the necessary YOLO configuration files, weights, and COCO labels. You can download these files from the following links:
 
@@ -124,51 +149,21 @@ Before running the backend server, ensure that the `models` directory is populat
 
 Place these files in the `python-backend/models` directory.
 
-
-#### Install Dependencies
+##### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-#### Run the Flask Server
+##### Run the Flask Server
 
 ```bash
 python src/app.py
 ```
 
-### Full Project Setup
+#### 3. Open Your Browser
 
-To get the entire project up and running, follow these steps:
-
-1. **Install Dependencies**:
-   - In the project root, run the following commands to install dependencies for both client and server:
-
-     ```bash
-     cd client
-     npm install
-     cd ../python-backend
-     pip install -r requirements.txt
-     ```
-
-2. **Build the React App**:
-   - Navigate to the `client` directory and build the app:
-
-     ```bash
-     cd client
-     npm run build
-     ```
-
-3. **Start the Flask Server**:
-   - Navigate to the `python-backend` directory and start the development server:
-
-     ```bash
-     cd ../python-backend
-     python src/app.py
-     ```
-
-4. **Open Your Browser**:
-   - Open your browser and go to `http://localhost:3000`. Your React app should be running.
+Open your browser and go to `http://localhost:3000`. Your React app should be running.
 
 ## Next Steps
 
@@ -179,12 +174,6 @@ In the next stages of development, we plan to:
 - Improve the user interface with more advanced features and better design.
 - Set up a database for storing user data and video metadata.
 - Fix the issue with processed video not playing in the UI.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## License
 
