@@ -17,8 +17,6 @@ For detailed documentation, visit our [Project Wiki](https://github.com/raihanva
 
 ## Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ### Full Project Setup
 
 To get the entire project up and running, follow these steps:
